@@ -4,5 +4,9 @@
     <string name="app_name">Bubblehead</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_first">FirstActivity</string>
+    <string name="first_activity_textview_text">Welcome to 1st Activity</string>
+    <string name="buttonDateTimeText">Get Active Wifi Connection</string>
+    <string name="buttonMain">Return to Main</string>
 
 </resources>
