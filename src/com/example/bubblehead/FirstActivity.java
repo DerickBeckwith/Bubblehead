@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 public class FirstActivity extends Activity {
 
+  private static String TAG = "FirstActivity";
+  
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
