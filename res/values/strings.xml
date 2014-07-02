@@ -8,5 +8,7 @@
     <string name="first_activity_textview_text">Welcome to 1st Activity</string>
     <string name="buttonDateTimeText">Get Active Wifi Connection</string>
     <string name="buttonMain">Return to Main</string>
+    <string name="button_get_time">Get Time</string>
+    <string name="textView_time">Click to get time</string>
 
 </resources>

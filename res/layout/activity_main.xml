@@ -19,4 +19,23 @@
         android:onClick="gotoFirstActivity"
         android:text="Goto 1st Activity" />
 
+    <TextView
+        android:id="@+id/textViewTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/buttonFirstActivity"
+        android:layout_below="@+id/buttonFirstActivity"
+        android:layout_marginTop="60dp"
+        android:text="@string/textView_time"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/buttonGetTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/textViewTime"
+        android:layout_below="@+id/textViewTime"
+        android:text="@string/button_get_time"
+        android:onClick="getTime" />
+
 </RelativeLayout>

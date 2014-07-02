@@ -26,6 +26,7 @@
             android:name="com.example.bubblehead.FirstActivity"
             android:label="@string/title_activity_first" >
         </activity>
+        <service android:name=".BoundService"/>
     </application>
 
 </manifest>
