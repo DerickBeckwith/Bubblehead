@@ -43,11 +43,19 @@ public class MainActivity extends Activity {
 	//onClick to get time
 	public void getTime(View v){
 	  Log.d(TAG,"getTime");
-    String currentTime = myService.getCurrentTime();
-    //String currentTime = myService.getCurrentDate();
-    Log.d(TAG,"showTime(): " + currentTime);	    
-    TextView myTextViewTime = (TextView)findViewById(R.id.textViewTime);
-    myTextViewTime.setText(currentTime);    
+	  
+	  if (myService != null) {
+		  try {
+			  String currentTime = myService.getCurrentTime();
+			  Log.d(TAG,"showTime(): " + currentTime);	    
+			  TextView myTextViewTime = (TextView)findViewById(R.id.textViewTime);
+			  myTextViewTime.setText(currentTime);
+		  } catch (NullPointerException exception) {
+			  Log.d(TAG, "NPE thrown when calling getCurrentTime()");
+		  }
+	  } else {
+		  Log.d(TAG, "myService is NULL!");
+	  }
 	}
 	
 	//process results from returning activities
