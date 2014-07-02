@@ -29,6 +29,12 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
+	}
+	
+	@Override
+	protected void onStart() {
+		super.onStart();
+		
 		//required for the bound service - date time
 		Intent intent = new Intent(this, BoundService.class);
 		bindService(intent, myConnection, Context.BIND_AUTO_CREATE);
