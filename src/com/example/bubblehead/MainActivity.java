@@ -40,6 +40,15 @@ public class MainActivity extends Activity {
 		bindService(intent, myConnection, Context.BIND_AUTO_CREATE);
 	}
 	
+	@Override
+	protected void onStop() {
+		super.onStop();
+		
+		if (myService != null) {
+			unbindService(myConnection);
+		}
+	}
+	
 	//onClick to go to first activity
 	public void gotoFirstActivity(View view){
 	  Intent intent = new Intent(getApplication().getBaseContext(),FirstActivity.class);
