@@ -29,9 +29,24 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
+	}
+	
+	@Override
+	protected void onStart() {
+		super.onStart();
+		
 		//required for the bound service - date time
 		Intent intent = new Intent(this, BoundService.class);
 		bindService(intent, myConnection, Context.BIND_AUTO_CREATE);
+	}
+	
+	@Override
+	protected void onStop() {
+		super.onStop();
+		
+		if (myService != null) {
+			unbindService(myConnection);
+		}
 	}
 	
 	//onClick to go to first activity
@@ -44,17 +59,13 @@ public class MainActivity extends Activity {
 	public void getTime(View v){
 	  Log.d(TAG,"getTime");
 	  
-	  if (myService != null) {
-		  try {
-			  String currentTime = myService.getCurrentTime();
-			  Log.d(TAG,"showTime(): " + currentTime);	    
-			  TextView myTextViewTime = (TextView)findViewById(R.id.textViewTime);
-			  myTextViewTime.setText(currentTime);
-		  } catch (NullPointerException exception) {
-			  Log.d(TAG, "NPE thrown when calling getCurrentTime()");
-		  }
-	  } else {
-		  Log.d(TAG, "myService is NULL!");
+	  try {
+		  String currentTime = myService.getCurrentTime();
+		  Log.d(TAG,"showTime(): " + currentTime);	    
+		  TextView myTextViewTime = (TextView)findViewById(R.id.textViewTime);
+		  myTextViewTime.setText(currentTime);
+	  } catch (Exception exception) {
+		  Log.d(TAG, exception.getMessage());
 	  }
 	}
 	
